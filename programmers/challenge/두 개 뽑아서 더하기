@@ -1,0 +1,63 @@
+import java.util.*;
+
+public class TwoNumber {
+//    Set<Integer> set = new HashSet<>();
+//    for (int i = 0; i <numbers.length; i++) {
+//        for (int j = i+1; j < numbers.length; j++) {
+//            set.add(numbers[i] + numbers[j]);
+//        }
+//    }
+//
+//    return set.stream().sorted().mapToInt(Integer::intValue).toArray();
+
+//    int[] answer = {};
+//    Set<Integer> set = new TreeSet<>();
+//        for (int i = 0; i <numbers.length; i++) {
+//          for (int j = i+1; j < numbers.length; j++) {
+//              set.add(numbers[i] + numbers[j]);
+//        }
+//    }
+//
+//        return set.stream().mapToInt(Integer::intValue).toArray();
+
+//    List<Integer> list = new ArrayList<>();
+//    for (int i = 0; i <numbers.length; i++) {
+//        for (int j = i+1; j < numbers.length; j++) {
+//            int sum = numbers[i] + numbers[j];
+//            if (!list.contains(sum)) {
+//                list.add(sum);
+//            }
+//        }
+//    }
+//    Collections.sort(list);
+//
+//    int[] answer = new answer[list.size()];
+//    for (int i = 0; i < answer.length; i++) {
+//        answer[i] = list.get(i);
+//    }
+//
+//    return answer;
+
+    class Solution {
+        public int[] solution(int[] numbers) {
+
+            List<Integer> list = new ArrayList<>();
+            for (int i = 0; i <numbers.length; i++) {
+                for (int j = i+1; j < numbers.length; j++) {
+                    int sum = numbers[i] + numbers[j];
+                    if (!list.contains(sum)) {
+                        list.add(sum);
+                    }
+                }
+            }
+            Collections.sort(list);
+
+            int[] answer = new int[list.size()];
+            for (int i = 0; i < answer.length; i++) {
+                answer[i] = list.get(i);
+            }
+
+            return answer;
+        }
+    }
+}
